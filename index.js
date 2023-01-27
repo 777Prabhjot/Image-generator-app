@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 
 
 const configuration = new Configuration({
-    apiKey: process.env.ApiKey,
+    apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
@@ -46,4 +46,5 @@ app.post('/generateImage', async (req, res) => {
 
 app.listen(5000, () => {
     console.log('server is running');
+    console.log(process.env.OPENAI_API_KEY)
 })
